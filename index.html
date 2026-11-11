@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Panadería Wang:" />
+    <title>Panadería Wang</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --color-fondo: #f5ede0;
+        --color-claro: #fffaf2;
+        --color-texto: #38251d;
+        --color-primario: #9e3e2b;
+        --color-rotulo: #9e3e2b;
+        --color-suave: #675348;
+        --color-borde: #cdbba8;
+        --color-pie: #38251d;
+        --color-pie-texto: #f5ede0;
+        --font-titulo: "Fraunces", Georgia, serif;
+        --font-texto: "DM Sans", Arial, sans-serif;
+      }
+
+      .bg-fondo {
+        background-color: var(--color-fondo);
+      }
+      .bg-claro {
+        background-color: var(--color-claro);
+      }
+      .bg-primario {
+        background-color: var(--color-primario);
+      }
+      .bg-pie {
+        background-color: var(--color-pie);
+      }
+      .text-texto {
+        color: var(--color-texto);
+      }
+      .text-suave {
+        color: var(--color-suave);
+      }
+      .text-rotulo {
+        color: var(--color-rotulo);
+      }
+      .text-pie-texto {
+        color: var(--color-pie-texto);
+      }
+      .border-borde {
+        border-color: var(--color-borde);
+      }
+      .font-texto {
+        font-family: var(--font-texto);
+      }
+      .font-titulo {
+        font-family: var(--font-titulo);
+      }
+      .hover\:bg-pie:hover {
+        background-color: var(--color-pie);
+      }
+      .border-pie-texto\/30 {
+        border-color: rgba(245, 237, 224, 0.3);
+      }
+    </style>
+    <script
+      src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body class="bg-fondo font-texto text-texto">
+    <header class="sticky top-0 z-10 border-b border-borde bg-fondo">
+      <div
+        class="mx-auto flex max-w-6xl flex-wrap items-center justify-between px-6 py-5"
+      >
+        <a href="#inicio" class="font-titulo text-2xl font-semibold text-rotulo"
+          >Panadería Wang</a
+        >
+        <div class="flex items-center gap-5 md:order-last">
+          <button
+            id="boton-tema"
+            type="button"
+            aria-pressed="false"
+            class="flex items-center gap-2 hover:underline"
+          >
+            <svg
+              class="icono-luna size-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M20.6 14.1A8.8 8.8 0 0 1 9.9 3.4 9 9 0 1 0 20.6 14.1Z" />
+            </svg>
+            <svg
+              class="icono-sol size-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"
+              />
+            </svg>
+            <span id="texto-tema">Modo oscuro</span>
+          </button>
+          <button
+            id="boton-menu"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu"
+            class="hover:underline md:hidden"
+          >
+            Menú
+          </button>
+        </div>
+        <nav
+          id="menu"
+          aria-label="Navegación principal"
+          class="hidden w-full md:block md:w-auto"
+        >
+          <ul class="flex flex-col gap-3 py-4 md:flex-row md:gap-8 md:py-0">
+            <li><a class="hover:underline" href="#mostrador">Mostrador</a></li>
+            <li><a class="hover:underline" href="#temporada">Temporada</a></li>
+            <li><a class="hover:underline" href="#obrador">Obrador</a></li>
+            <li><a class="hover:underline" href="#encargos">Encargos</a></li>
+            <li><a class="hover:underline" href="#visitanos">Visítanos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="inicio"
+        class="hero flex min-h-[75vh] items-end px-6 pb-14 text-white"
+      >
+        <div class="mx-auto w-full max-w-6xl">
+          <h1
+            class="titulo-entrada max-w-2xl font-titulo text-5xl font-semibold md:text-7xl"
+          >
+            Pan hecho con tiempo.
+          </h1>
+          <p class="mt-4 max-w-md text-lg">
+            Masa madre, bollería y tartas hechas cada día en el obrador, en
+            Carabanchel.
+          </p>
+        </div>
+      </section>
+
+      <section id="mostrador" class="mx-auto max-w-6xl px-6 py-20">
+        <h2 class="font-titulo text-4xl font-semibold">El mostrador</h2>
+        <p class="mt-3 max-w-xl">
+          Lo que encontrarás casi siempre. Hacemos hornadas pequeñas, así que
+          algunas cosas se acaban pronto.
+        </p>
+
+        <div
+          class="mt-10 grid auto-rows-[150px] grid-cols-2 gap-2 md:auto-rows-[170px] md:grid-cols-4"
+          data-aos="fade-up"
+        >
+          <article class="relative overflow-hidden col-span-2 row-span-2">
+            <img
+              class="absolute inset-0 size-full object-cover"
+              src="assets/images/hogaza.jpg"
+              alt="Hogaza redonda de masa madre con la corteza dorada."
+              width="512"
+              height="256"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
+            >
+              <h3 class="font-titulo text-xl font-semibold">
+                Hogaza de la casa
+              </h3>
+              <p class="text-sm">5,20 €</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden">
+            <img
+              class="absolute inset-0 size-full object-cover"
+              src="assets/images/barra.jpg"
+              alt="Barra de pan dorada con cortes en la corteza."
+              width="512"
+              height="256"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
+            >
+              <h3 class="font-titulo text-base font-semibold">
+                Barra de barrio
+              </h3>
+              <p class="text-sm">1,80 €</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden">
+            <img
+              class="absolute inset-0 size-full object-cover"
+              src="assets/images/centeno.jpg"
+              alt="Pan de centeno con semillas."
+              width="512"
+              height="256"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
+            >
+              <h3 class="font-titulo text-base font-semibold">
+                Centeno y semillas
+              </h3>
+              <p class="text-sm">5,80 €</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden col-span-2">
+            <img
+              class="absolute inset-0 size-full object-cover"
+              src="assets/images/croissant.jpg"
+              alt="Croissant de mantequilla con capas de hojaldre."
+              width="512"
+              height="256"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
+            >
+              <h3 class="font-titulo text-base font-semibold">
+                Croissant de mantequilla
+              </h3>
+              <p class="text-sm">2,60 €</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden">
+            <img
+              class="absolute inset-0 size-full object-cover"
+              src="assets/images/napolitana.jpg"
+              alt="Napolitana con chocolate."
+              width="512"
+              height="256"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
+            >
+              <h3 class="font-titulo text-base font-semibold">Napolitana</h3>
+              <p class="text-sm">2,90 €</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden">
+            <img
+              class="absolute inset-0 size-full object-cover"
+              src="assets/images/caracola.jpg"
+              alt="Caracola de canela."
+              width="512"
+              height="256"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
+            >
+              <h3 class="font-titulo text-base font-semibold">
+                Caracola de canela
+              </h3>
+              <p class="text-sm">3,20 €</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden col-span-2 row-span-2">
+            <img
+              class="absolute inset-0 size-full object-cover"
+              src="assets/images/queso.jpg"
+              alt="Porción de tarta de queso."
+              width="512"
+              height="256"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
+            >
+              <h3 class="font-titulo text-xl font-semibold">Tarta de queso</h3>
+              <p class="text-sm">4,50 €</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden col-span-2">
+            <img
+              class="absolute inset-0 size-full object-cover"
+              src="assets/images/limon.jpg"
+              alt="Tartaleta de limón con merengue."
+              width="512"
+              height="256"
+              loading="lazy"
+            />
+            <div
+              class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
+            >
+              <h3 class="font-titulo text-base font-semibold">
+                Tartaleta de limón
+              </h3>
+              <p class="text-sm">4,20 €</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="mt-8 text-sm text-suave">
+          Si tienes alguna alergia, pregunta en el mostrador antes de comprar.
+        </p>
+      </section>
+
+      <section id="temporada" class="bg-primario px-6 py-16 text-white">
+        <div class="mx-auto max-w-6xl">
+          <h2 class="font-titulo text-4xl font-semibold">De temporada</h2>
+          <p class="mt-3 max-w-xl">
+            Lo que hacemos en otoño y dejamos de hacer cuando acaba.
+          </p>
+          <div class="mt-8 grid gap-8 md:grid-cols-3" data-aos="fade-up">
+            <article>
+              <img
+                class="aspect-[3/2] w-full object-cover"
+                src="assets/images/nueces.jpg"
+                alt="Hogaza de nueces cortada."
+                width="512"
+                height="276"
+                loading="lazy"
+              />
+              <h3 class="mt-3 font-titulo text-xl font-semibold">
+                Hogaza de nueces
+              </h3>
+              <p class="mt-1">
+                Con nueces en la miga. Muy buena con queso. 6,20 €
+              </p>
+            </article>
+            <article>
+              <img
+                class="aspect-[3/2] w-full object-cover"
+                src="assets/images/manzana.jpg"
+                alt="Caracola con manzana."
+                width="512"
+                height="276"
+                loading="lazy"
+              />
+              <h3 class="mt-3 font-titulo text-xl font-semibold">
+                Caracola de manzana
+              </h3>
+              <p class="mt-1">3,60 €</p>
+            </article>
+            <article>
+              <img
+                class="aspect-[3/2] w-full object-cover"
+                src="assets/images/pera.jpg"
+                alt="Tarta de pera y almendra."
+                width="512"
+                height="276"
+                loading="lazy"
+              />
+              <h3 class="mt-3 font-titulo text-xl font-semibold">
+                Tarta de pera y almendra
+              </h3>
+              <p class="mt-1">Porción, 4,80 €</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="obrador" class="px-6 py-20">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-titulo text-4xl font-semibold">El obrador</h2>
+          <p class="mt-6 text-lg">
+            En Panadería Wang empezamos antes de abrir. Preparamos la masa, la
+            dejamos reposar y horneamos por tandas durante la mañana. Todo lo
+            que ves en el mostrador se hace aquí mismo.
+          </p>
+        </div>
+        <img
+          class="mx-auto mt-10 aspect-[2.4/1] w-full max-w-6xl object-cover"
+          src="assets/images/obrador-1536.webp"
+          srcset="
+            assets/images/obrador-768.webp   768w,
+            assets/images/obrador-1536.webp 1536w
+          "
+          sizes="(min-width: 1152px) 1152px, 100vw"
+          alt="Manos formando una pieza de masa sobre la mesa enharinada."
+          width="1536"
+          height="1024"
+          loading="lazy"
+          data-aos="fade-up"
+        />
+      </section>
+
+      <section id="encargos" class="bg-claro px-6 py-20">
+        <div class="mx-auto max-w-6xl">
+          <h2 class="font-titulo text-4xl font-semibold">Tartas por encargo</h2>
+          <p class="mt-3 max-w-xl">
+            Para cumpleaños y comidas en familia. Pídela con 48 horas de
+            antelación y la recoges en el obrador.
+          </p>
+
+          <div class="mt-10 grid gap-8 md:grid-cols-3" data-aos="fade-up">
+            <article>
+              <img
+                class="aspect-[3/2] w-full object-cover"
+                src="assets/images/queso.jpg"
+                alt="Tarta de queso."
+                width="512"
+                height="276"
+                loading="lazy"
+              />
+              <div class="mt-3 flex items-baseline justify-between gap-4">
+                <h3 class="font-titulo text-xl font-semibold">
+                  Tarta de queso
+                </h3>
+                <p class="font-semibold">28 €</p>
+              </div>
+              <p class="text-suave">6 a 8 raciones</p>
+            </article>
+            <article>
+              <img
+                class="aspect-[3/2] w-full object-cover"
+                src="assets/images/pera.jpg"
+                alt="Tarta de pera y almendra."
+                width="512"
+                height="276"
+                loading="lazy"
+              />
+              <div class="mt-3 flex items-baseline justify-between gap-4">
+                <h3 class="font-titulo text-xl font-semibold">
+                  Pera y almendra
+                </h3>
+                <p class="font-semibold">32 €</p>
+              </div>
+              <p class="text-suave">6 a 8 raciones</p>
+            </article>
+            <article>
+              <img
+                class="aspect-[3/2] w-full object-cover"
+                src="assets/images/naranja.jpg"
+                alt="Bizcocho de naranja."
+                width="512"
+                height="276"
+                loading="lazy"
+              />
+              <div class="mt-3 flex items-baseline justify-between gap-4">
+                <h3 class="font-titulo text-xl font-semibold">
+                  Bizcocho de naranja
+                </h3>
+                <p class="font-semibold">22 €</p>
+              </div>
+              <p class="text-suave">8 raciones</p>
+            </article>
+          </div>
+
+          <p class="mt-10">
+            Dinos qué tarta quieres, para cuántas personas y qué día vienes a
+            por ella.
+          </p>
+          <a
+            href="mailto:hola@panaderiawang.example?subject=Encargo%20de%20tarta"
+            class="mt-4 inline-block bg-primario px-6 py-3 font-semibold text-white hover:bg-pie"
+            >Hacer un encargo</a
+          >
+          <p class="mt-3 text-sm text-suave">
+            No se hacen pedidos ni pagos a través de esta web.
+          </p>
+        </div>
+      </section>
+
+      <section id="visitanos" class="mx-auto max-w-6xl px-6 py-20">
+        <h2 class="font-titulo text-4xl font-semibold">Visítanos</h2>
+        <div class="mt-8 grid gap-10 md:grid-cols-2">
+          <div class="space-y-8">
+            <div>
+              <h3 class="font-titulo text-xl font-semibold">Dónde estamos</h3>
+              <p class="mt-3">Plaza de la Lexi, 8, Carabanchel, Madrid</p>
+              <p class="mt-1">hola@lexiawang.example</p>
+            </div>
+            <div>
+              <h3 class="font-titulo text-xl font-semibold">Horario</h3>
+              <p class="mt-3">De martes a viernes abrimos de 8:00 a 20:00.</p>
+              <p class="mt-1">
+                Los sábados, de 8:30 a 15:00, y los domingos, de 9:00 a 14:00.
+              </p>
+              <p class="mt-1">Los lunes cerramos.</p>
+            </div>
+          </div>
+          <iframe
+            title="Mapa de Carabanchel, Madrid"
+            class="h-80 w-full border-0 md:h-full md:min-h-80"
+            src="https://www.google.com/maps?q=Carabanchel,+Madrid&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-pie px-6 py-12 text-pie-texto">
+      <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
+        <div class="md:col-span-2">
+          <p class="font-titulo text-2xl font-semibold">Panadería Wang</p>
+          <p class="mt-3 max-w-sm">
+            Pan de masa madre, bollería y tartas por encargo en Carabanchel,
+            Madrid.
+          </p>
+        </div>
+        <div>
+          <p class="font-semibold">Secciones</p>
+          <ul class="mt-3 space-y-1">
+            <li><a class="hover:underline" href="#mostrador">Mostrador</a></li>
+            <li><a class="hover:underline" href="#temporada">Temporada</a></li>
+            <li><a class="hover:underline" href="#obrador">Obrador</a></li>
+            <li><a class="hover:underline" href="#encargos">Encargos</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">Contacto</p>
+          <ul class="mt-3 space-y-1">
+            <li>Plaza de la Miga, 8</li>
+            <li>Carabanchel, Madrid</li>
+            <li>hola@panaderiawang.example</li>
+            <li>Martes a viernes 8:00 a 20:00</li>
+          </ul>
+        </div>
+      </div>
+      <p
+        class="mx-auto mt-10 max-w-6xl border-t border-pie-texto/30 pt-6 text-sm"
+      >
+        © 2023 Panadería Wang. Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>

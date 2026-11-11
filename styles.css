@@ -1,0 +1,65 @@
+/* MIGA · CSS propio. Tailwind resuelve el resto. */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("assets/fonts/fraunces.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/fonts/dm-sans.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem; /* alto de la cabecera fija */
+}
+
+/* Con la cabecera fija, el título de cada sección queda justo debajo y no tras un hueco en blanco */
+#mostrador, #obrador, #encargos, #visitanos {
+  scroll-margin-top: -3.5rem;
+}
+#temporada {
+  scroll-margin-top: -2.5rem;
+}
+
+/* Modo oscuro: solo se cambian los colores del tema */
+html.dark {
+  color-scheme: dark;
+  --color-fondo: #201915;
+  --color-claro: #2b211c;
+  --color-texto: #f5ede0;
+  --color-rotulo: #f0aa8f;
+  --color-suave: #c8b4a6;
+  --color-borde: #745e50;
+  --color-pie: #2b211c;
+}
+
+.icono-sol { display: none; }
+html.dark .icono-sol { display: block; }
+html.dark .icono-luna { display: none; }
+
+.hero {
+  background-image: linear-gradient(rgb(0 0 0 / .45), rgb(0 0 0 / .45)), url("assets/images/hero-1536.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-rotulo);
+  outline-offset: 3px;
+}
+
+/* Se ejecuta una sola vez al cargar */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.titulo-entrada {
+  animation: fadeIn 800ms ease-out;
+}

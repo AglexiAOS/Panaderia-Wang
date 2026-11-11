@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../andriko/miga-web"
+	},
+	{
+		"path": "../../andres/miga-web1"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "miga-web1"
+  }
+}
