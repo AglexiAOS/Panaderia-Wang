@@ -14,7 +14,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-      :root {
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      @theme {
         --color-fondo: #f5ede0;
         --color-claro: #fffaf2;
         --color-texto: #38251d;
@@ -24,48 +26,13 @@
         --color-borde: #cdbba8;
         --color-pie: #38251d;
         --color-pie-texto: #f5ede0;
+        --color-carbon: #201915;
+        --color-corteza: #2b211c;
+        --color-brasa: #f0aa8f;
+        --color-suave-oscuro: #c8b4a6;
+        --color-borde-oscuro: #745e50;
         --font-titulo: "Fraunces", Georgia, serif;
         --font-texto: "DM Sans", Arial, sans-serif;
-      }
-
-      .bg-fondo {
-        background-color: var(--color-fondo);
-      }
-      .bg-claro {
-        background-color: var(--color-claro);
-      }
-      .bg-primario {
-        background-color: var(--color-primario);
-      }
-      .bg-pie {
-        background-color: var(--color-pie);
-      }
-      .text-texto {
-        color: var(--color-texto);
-      }
-      .text-suave {
-        color: var(--color-suave);
-      }
-      .text-rotulo {
-        color: var(--color-rotulo);
-      }
-      .text-pie-texto {
-        color: var(--color-pie-texto);
-      }
-      .border-borde {
-        border-color: var(--color-borde);
-      }
-      .font-texto {
-        font-family: var(--font-texto);
-      }
-      .font-titulo {
-        font-family: var(--font-titulo);
-      }
-      .hover\:bg-pie:hover {
-        background-color: var(--color-pie);
-      }
-      .border-pie-texto\/30 {
-        border-color: rgba(245, 237, 224, 0.3);
       }
     </style>
     <script
@@ -74,12 +41,12 @@
     ></script>
     <script src="script.js" defer></script>
   </head>
-  <body class="bg-fondo font-texto text-texto">
-    <header class="sticky top-0 z-10 border-b border-borde bg-fondo">
+  <body class="bg-fondo dark:bg-carbon font-texto text-texto dark:text-fondo">
+    <header class="sticky top-0 z-10 border-b border-borde dark:border-borde-oscuro bg-fondo dark:bg-carbon">
       <div
         class="mx-auto flex max-w-6xl flex-wrap items-center justify-between px-6 py-5"
       >
-        <a href="#inicio" class="font-titulo text-2xl font-semibold text-rotulo"
+        <a href="#inicio" class="font-titulo text-2xl font-semibold text-rotulo dark:text-brasa"
           >Panadería Wang</a
         >
         <div class="flex items-center gap-5 md:order-last">
@@ -90,7 +57,7 @@
             class="flex items-center gap-2 hover:underline"
           >
             <svg
-              class="icono-luna size-5"
+              class="icono-luna size-5 dark:hidden"
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"
@@ -98,7 +65,7 @@
               <path d="M20.6 14.1A8.8 8.8 0 0 1 9.9 3.4 9 9 0 1 0 20.6 14.1Z" />
             </svg>
             <svg
-              class="icono-sol size-5"
+              class="icono-sol hidden size-5 dark:block"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -167,7 +134,7 @@
           class="mt-10 grid auto-rows-[150px] grid-cols-2 gap-2 md:auto-rows-[170px] md:grid-cols-4"
           data-aos="fade-up"
         >
-          <article class="relative overflow-hidden col-span-2 row-span-2">
+          <article tabindex="0" class="tarjeta relative overflow-hidden col-span-2 row-span-2">
             <img
               class="absolute inset-0 size-full object-cover"
               src="assets/images/hogaza.jpg"
@@ -185,11 +152,11 @@
               <p class="text-sm">5,20 €</p>
             </div>
           </article>
-          <article class="relative overflow-hidden">
+          <article tabindex="0" class="tarjeta relative overflow-hidden">
             <img
               class="absolute inset-0 size-full object-cover"
-              src="assets/images/barra.jpg"
-              alt="Barra de pan dorada con cortes en la corteza."
+              src="assets/images/pan-dorado.jpg"
+              alt="Pan dorado con cortes en la corteza."
               width="512"
               height="256"
               loading="lazy"
@@ -198,16 +165,16 @@
               class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
             >
               <h3 class="font-titulo text-base font-semibold">
-                Barra de barrio
+                Pan dorado
               </h3>
               <p class="text-sm">1,80 €</p>
             </div>
           </article>
-          <article class="relative overflow-hidden">
+          <article tabindex="0" class="tarjeta relative overflow-hidden">
             <img
               class="absolute inset-0 size-full object-cover"
-              src="assets/images/centeno.jpg"
-              alt="Pan de centeno con semillas."
+              src="assets/images/pan-de-molde.jpg"
+              alt="Rebanada de pan de molde tostada."
               width="512"
               height="256"
               loading="lazy"
@@ -216,12 +183,12 @@
               class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
             >
               <h3 class="font-titulo text-base font-semibold">
-                Centeno y semillas
+                Pan de molde
               </h3>
               <p class="text-sm">5,80 €</p>
             </div>
           </article>
-          <article class="relative overflow-hidden col-span-2">
+          <article tabindex="0" class="tarjeta relative overflow-hidden col-span-2">
             <img
               class="absolute inset-0 size-full object-cover"
               src="assets/images/croissant.jpg"
@@ -239,11 +206,11 @@
               <p class="text-sm">2,60 €</p>
             </div>
           </article>
-          <article class="relative overflow-hidden">
+          <article tabindex="0" class="tarjeta relative overflow-hidden">
             <img
               class="absolute inset-0 size-full object-cover"
-              src="assets/images/napolitana.jpg"
-              alt="Napolitana con chocolate."
+              src="assets/images/tarta-de-manzana.jpg"
+              alt="Tarta de manzana con cubierta enrejada."
               width="512"
               height="256"
               loading="lazy"
@@ -251,11 +218,11 @@
             <div
               class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
             >
-              <h3 class="font-titulo text-base font-semibold">Napolitana</h3>
+              <h3 class="font-titulo text-base font-semibold">Tarta de manzana</h3>
               <p class="text-sm">2,90 €</p>
             </div>
           </article>
-          <article class="relative overflow-hidden">
+          <article tabindex="0" class="tarjeta relative overflow-hidden">
             <img
               class="absolute inset-0 size-full object-cover"
               src="assets/images/caracola.jpg"
@@ -273,7 +240,7 @@
               <p class="text-sm">3,20 €</p>
             </div>
           </article>
-          <article class="relative overflow-hidden col-span-2 row-span-2">
+          <article tabindex="0" class="tarjeta relative overflow-hidden col-span-2 row-span-2">
             <img
               class="absolute inset-0 size-full object-cover"
               src="assets/images/queso.jpg"
@@ -289,11 +256,11 @@
               <p class="text-sm">4,50 €</p>
             </div>
           </article>
-          <article class="relative overflow-hidden col-span-2">
+          <article tabindex="0" class="tarjeta relative overflow-hidden col-span-2">
             <img
               class="absolute inset-0 size-full object-cover"
-              src="assets/images/limon.jpg"
-              alt="Tartaleta de limón con merengue."
+              src="assets/images/pastel-de-limon.jpg"
+              alt="Porción de pastel de limón con capas de crema."
               width="512"
               height="256"
               loading="lazy"
@@ -302,14 +269,14 @@
               class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-3 pb-3 pt-10 text-white"
             >
               <h3 class="font-titulo text-base font-semibold">
-                Tartaleta de limón
+                Pastel de limón
               </h3>
               <p class="text-sm">4,20 €</p>
             </div>
           </article>
         </div>
 
-        <p class="mt-8 text-sm text-suave">
+        <p class="mt-8 text-sm text-suave dark:text-suave-oscuro">
           Si tienes alguna alergia, pregunta en el mostrador antes de comprar.
         </p>
       </section>
@@ -321,47 +288,47 @@
             Lo que hacemos en otoño y dejamos de hacer cuando acaba.
           </p>
           <div class="mt-8 grid gap-8 md:grid-cols-3" data-aos="fade-up">
-            <article>
+            <article tabindex="0" class="tarjeta">
               <img
                 class="aspect-[3/2] w-full object-cover"
-                src="assets/images/nueces.jpg"
-                alt="Hogaza de nueces cortada."
+                src="assets/images/pan-de-nueces.jpg"
+                alt="Pan de nueces cortado en rebanadas."
                 width="512"
                 height="276"
                 loading="lazy"
               />
               <h3 class="mt-3 font-titulo text-xl font-semibold">
-                Hogaza de nueces
+                Pan de nueces
               </h3>
               <p class="mt-1">
                 Con nueces en la miga. Muy buena con queso. 6,20 €
               </p>
             </article>
-            <article>
+            <article tabindex="0" class="tarjeta">
               <img
                 class="aspect-[3/2] w-full object-cover"
-                src="assets/images/manzana.jpg"
-                alt="Caracola con manzana."
+                src="assets/images/porcion-de-manzana.jpg"
+                alt="Porción de tarta de manzana servida en un plato."
                 width="512"
                 height="276"
                 loading="lazy"
               />
               <h3 class="mt-3 font-titulo text-xl font-semibold">
-                Caracola de manzana
+                Tarta de manzana
               </h3>
               <p class="mt-1">3,60 €</p>
             </article>
-            <article>
+            <article tabindex="0" class="tarjeta">
               <img
                 class="aspect-[3/2] w-full object-cover"
-                src="assets/images/pera.jpg"
-                alt="Tarta de pera y almendra."
+                src="assets/images/tarta-de-fruta.jpg"
+                alt="Tarta de fruta."
                 width="512"
                 height="276"
                 loading="lazy"
               />
               <h3 class="mt-3 font-titulo text-xl font-semibold">
-                Tarta de pera y almendra
+                Tarta de fruta
               </h3>
               <p class="mt-1">Porción, 4,80 €</p>
             </article>
@@ -394,7 +361,7 @@
         />
       </section>
 
-      <section id="encargos" class="bg-claro px-6 py-20">
+      <section id="encargos" class="bg-claro dark:bg-corteza px-6 py-20">
         <div class="mx-auto max-w-6xl">
           <h2 class="font-titulo text-4xl font-semibold">Tartas por encargo</h2>
           <p class="mt-3 max-w-xl">
@@ -403,7 +370,7 @@
           </p>
 
           <div class="mt-10 grid gap-8 md:grid-cols-3" data-aos="fade-up">
-            <article>
+            <article tabindex="0" class="tarjeta">
               <img
                 class="aspect-[3/2] w-full object-cover"
                 src="assets/images/queso.jpg"
@@ -418,41 +385,41 @@
                 </h3>
                 <p class="font-semibold">28 €</p>
               </div>
-              <p class="text-suave">6 a 8 raciones</p>
+              <p class="text-suave dark:text-suave-oscuro">6 a 8 raciones</p>
             </article>
-            <article>
+            <article tabindex="0" class="tarjeta">
               <img
                 class="aspect-[3/2] w-full object-cover"
-                src="assets/images/pera.jpg"
-                alt="Tarta de pera y almendra."
+                src="assets/images/tarta-de-fruta.jpg"
+                alt="Tarta de fruta."
                 width="512"
                 height="276"
                 loading="lazy"
               />
               <div class="mt-3 flex items-baseline justify-between gap-4">
                 <h3 class="font-titulo text-xl font-semibold">
-                  Pera y almendra
+                  Tarta de fruta
                 </h3>
                 <p class="font-semibold">32 €</p>
               </div>
-              <p class="text-suave">6 a 8 raciones</p>
+              <p class="text-suave dark:text-suave-oscuro">6 a 8 raciones</p>
             </article>
-            <article>
+            <article tabindex="0" class="tarjeta">
               <img
                 class="aspect-[3/2] w-full object-cover"
-                src="assets/images/naranja.jpg"
-                alt="Bizcocho de naranja."
+                src="assets/images/tarta-de-naranja.jpg"
+                alt="Tarta de naranja."
                 width="512"
                 height="276"
                 loading="lazy"
               />
               <div class="mt-3 flex items-baseline justify-between gap-4">
                 <h3 class="font-titulo text-xl font-semibold">
-                  Bizcocho de naranja
+                  Tarta de naranja
                 </h3>
                 <p class="font-semibold">22 €</p>
               </div>
-              <p class="text-suave">8 raciones</p>
+              <p class="text-suave dark:text-suave-oscuro">8 raciones</p>
             </article>
           </div>
 
@@ -462,10 +429,10 @@
           </p>
           <a
             href="mailto:hola@panaderiawang.example?subject=Encargo%20de%20tarta"
-            class="mt-4 inline-block bg-primario px-6 py-3 font-semibold text-white hover:bg-pie"
+            class="mt-4 inline-block bg-primario px-6 py-3 font-semibold text-white hover:bg-pie dark:hover:bg-corteza"
             >Hacer un encargo</a
           >
-          <p class="mt-3 text-sm text-suave">
+          <p class="mt-3 text-sm text-suave dark:text-suave-oscuro">
             No se hacen pedidos ni pagos a través de esta web.
           </p>
         </div>
@@ -500,7 +467,7 @@
       </section>
     </main>
 
-    <footer class="bg-pie px-6 py-12 text-pie-texto">
+    <footer class="bg-pie dark:bg-corteza px-6 py-12 text-pie-texto">
       <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
         <div class="md:col-span-2">
           <p class="font-titulo text-2xl font-semibold">Panadería Wang</p>
